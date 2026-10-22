@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL ÁLAMO | Distribuidora Agroindustrial & Forrajera High-Tech</title>
+
+    <!-- Fuentes Google: Syne (Titulares Industriales) + Plus Jakarta Sans (Lectura) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS Engine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Iconos Phosphor -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            950: '#050D08',
+                            900: '#0B1A12',
+                            850: '#10241A',
+                            800: '#163325',
+                            700: '#1F4734',
+                            emerald: '#10B981',
+                            amber: '#D97706',
+                            gold: '#F59E0B',
+                            charcoal: '#0F172A',
+                            slate: '#1E293B'
+                        }
+                    },
+                    fontFamily: {
+                        syne: ['Syne', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Personalización de scrollbar industrial */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050D08;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1F4734;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #10B981;
+        }
+
+        .glass-panel {
+            background: rgba(16, 36, 26, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(22, 51, 37, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(16, 185, 129, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(16, 185, 129, 0.1);
+        }
+
+        .gold-glow {
+            text-shadow: 0 0 20px rgba(217, 119, 6, 0.4);
+        }
+
+        .emerald-glow {
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.25);
+        }
+
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="bg-brand-950 text-slate-100 font-sans antialiased overflow-x-hidden bg-grid-pattern selection:bg-brand-emerald selection:text-brand-950">
+
+    <!-- Top Status Bar Institucional -->
+    <div class="bg-brand-900 border-b border-white/10 text-xs py-2 px-4 md:px-12 flex flex-wrap justify-between items-center text-slate-400 gap-2 z-50 relative">
+        <div class="flex items-center gap-6">
+            <span class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-brand-emerald animate-ping"></span>
+                <span class="text-white font-medium">ESTADO DE PLANTA:</span> Operativa (Despacho Activo)
+            </span>
+            <span class="hidden md:inline-flex items-center gap-2 border-l border-white/10 pl-6">
+                <i class="ph-bold ph-truck text-brand-amber"></i> Logística Pesada: Rutas Coahuila - Nuevo León - Tamaulipas
+            </span>
+        </div>
+        <div class="flex items-center gap-6">
+            <a href="tel:8611265737" class="hover:text-brand-emerald transition-colors flex items-center gap-1.5">
+                <i class="ph-bold ph-phone-call text-brand-emerald"></i> Línea Directa: +52 (861) 126-5737
+            </a>
+            <span class="hidden sm:inline border-l border-white/10 pl-6 text-brand-amber font-semibold">
+                CENTRO B2B Y MAYOREO
+            </span>
+        </div>
+    </div>
+
+    <!-- Header Corporativo Sticky -->
+    <header class="sticky top-0 z-40 glass-panel border-b border-white/10 shadow-2xl transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Branding -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 bg-gradient-to-br from-brand-emerald to-brand-800 rounded-lg flex items-center justify-center text-brand-950 font-syne font-extrabold text-2xl shadow-lg border border-brand-emerald/30 group-hover:scale-105 transition-transform">
+                    Á
+                </div>
+                <div>
+                    <span class="font-syne font-extrabold text-xl tracking-wider text-white block leading-none">
+                        EL ÁLAMO <span class="text-brand-amber">.</span>
+                    </span>
+                    <span class="text-[9px] uppercase tracking-[0.25em] text-brand-emerald font-bold block mt-1">
+                        DISTRIBUIDORA AGROINDUSTRIAL
+                    </span>
+                </div>
+            </a>
+
+            <!-- Navegación Principal -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold tracking-wide uppercase text-slate-300">
+                <a href="#sectores" class="hover:text-brand-emerald transition-colors py-2 border-b-2 border-transparent hover:border-brand-emerald">Sectores</a>
+                <a href="#catalogo" class="hover:text-brand-emerald transition-colors py-2 border-b-2 border-transparent hover:border-brand-emerald">Catálogo Técnico</a>
+                <a href="#calculadora" class="hover:text-brand-emerald transition-colors py-2 border-b-2 border-transparent hover:border-brand-emerald flex items-center gap-1.5 text-brand-amber">
+                    <i class="ph-bold ph-calculator"></i> Calc. Forrajera
+                </a>
+                <a href="#logistica" class="hover:text-brand-emerald transition-colors py-2 border-b-2 border-transparent hover:border-brand-emerald">Logística & Fletes</a>
+                <a href="#cobertura" class="hover:text-brand-emerald transition-colors py-2 border-b-2 border-transparent hover:border-brand-emerald">Cotización B2B</a>
+            </nav>
+
+            <!-- Acciones -->
+            <div class="flex items-center gap-4">
+                <a href="https://api.whatsapp.com/send?phone=528611265737&text=Hola,%20deseo%20solicitar%20una%20cotizacion%20institucional%20para%20un%20rancho." target="_blank" 
+                   class="bg-brand-emerald text-brand-950 hover:bg-emerald-400 font-extrabold text-xs tracking-wider uppercase px-5 py-3 rounded-md shadow-lg emerald-glow transition-all flex items-center gap-2">
+                    <i class="ph-bold ph-whatsapp-logo text-lg"></i>
+                    <span>Cotizar Por Lote</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION DE ALTO IMPACTO -->
+        <section class="relative min-h-[90vh] flex items-center pt-12 pb-20 overflow-hidden border-b border-white/10">
+            <!-- Capas de Fondo e Iluminación -->
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-950 via-brand-900/90 to-transparent z-10"></div>
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=2000&q=90" alt="Rancho Industrial" class="w-full h-full object-cover object-center filter brightness-50 contrast-125 scale-105 animate-pulse" style="animation-duration: 10s;">
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-8">
+                        <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full glass-panel border border-brand-amber/30 text-brand-amber text-xs font-bold uppercase tracking-widest">
+                            <i class="ph-bold ph-shield-check text-base"></i> Suministro Agroindustrial Certificado
+                        </div>
+
+                        <h1 class="font-syne font-extrabold text-4xl sm:text-6xl lg:text-7xl leading-none tracking-tight text-white">
+                            POTENCIA Y <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-emerald via-emerald-200 to-brand-amber">
+                                NUTRICIÓN DE PRECISIÓN
+                            </span> <br>
+                            PARA TU RANCH.
+                        </h1>
+
+                        <p class="text-slate-300 text-lg leading-relaxed max-w-2xl font-normal">
+                            Abastecimiento masivo y fórmula balanceada para unidades pecuarias de alta exigencia. Distribuimos granos procesados, concentrados proteicos y fardos seleccionados directamente a pie de rancho.
+                        </p>
+
+                        <div class="flex flex-wrap items-center gap-4 pt-2">
+                            <a href="#calculadora" class="bg-brand-amber hover:bg-amber-600 text-brand-950 font-extrabold px-8 py-4 rounded-md uppercase text-sm tracking-wider shadow-xl transition-all flex items-center gap-3">
+                                <i class="ph-bold ph-calculator text-xl"></i>
+                                Calcular Requerimiento Tonal
+                            </a>
+                            <a href="#catalogo" class="glass-panel hover:bg-white/10 text-white font-bold px-8 py-4 rounded-md uppercase text-sm tracking-wider border border-white/20 transition-all flex items-center gap-2">
+                                Explorer Fichas Técnicas
+                                <i class="ph-bold ph-arrow-down"></i>
+                            </a>
+                        </div>
+
+                        <!-- Highlights Operativos -->
+                        <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
+                            <div>
+                                <div class="font-syne font-extrabold text-3xl lg:text-4xl text-white">45,000+</div>
+                                <div class="text-xs font-medium text-slate-400 uppercase tracking-wider mt-1">Ton. Entregadas / Año</div>
+                            </div>
+                            <div>
+                                <div class="font-syne font-extrabold text-3xl lg:text-4xl text-brand-emerald">350+</div>
+                                <div class="text-xs font-medium text-slate-400 uppercase tracking-wider mt-1">Ranchos & Ejidos</div>
+                            </div>
+                            <div>
+                                <div class="font-syne font-extrabold text-3xl lg:text-4xl text-brand-amber">99.8%</div>
+                                <div class="text-xs font-medium text-slate-400 uppercase tracking-wider mt-1">Pureza & Eficiencia</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel de Monitoreo Rápido / Widget B2B -->
+                    <div class="lg:col-span-5">
+                        <div class="glass-panel p-8 rounded-2xl border border-brand-emerald/20 shadow-2xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-emerald/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                            <div class="flex items-center justify-between pb-6 border-b border-white/10">
+                                <h3 class="font-syne font-bold text-lg text-white flex items-center gap-2">
+                                    <i class="ph-bold ph-trend-up text-brand-emerald"></i>
+                                    Cotizador Rápido de Flete
+                                </h3>
+                                <span class="text-xs text-brand-emerald font-mono bg-brand-emerald/10 px-2 py-1 rounded">LIVE PRICING</span>
+                            </div>
+
+                            <form id="heroQuickQuoteForm" class="space-y-4 mt-6">
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-400 mb-2">Producto Requerido</label>
+                                    <select id="heroProduct" class="w-full bg-brand-950 border border-white/10 rounded-lg p-3 text-sm text-white focus:border-brand-emerald focus:outline-none">
+                                        <option value="Concentrado Engorda Bovino 18%">Concentrado Engorda Bovino 18% Proteína</option>
+                                        <option value="Fardo Alfalfa Chicoteada Premium">Fardo Alfalfa Chicoteada Premium</option>
+                                        <option value="Maíz Rolado al Vapor">Maíz Rolado al Vapor</option>
+                                        <option value="Sales Minerales Pecuarias">Sales Minerales & Fósforo High-Gain</option>
+                                    </select>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs uppercase font-bold text-slate-400 mb-2">Volumen Estimado</label>
+                                        <input type="number" id="heroVolume" placeholder="Ej. 15" min="1" value="10" class="w-full bg-brand-950 border border-white/10 rounded-lg p-3 text-sm text-white focus:border-brand-emerald focus:outline-none">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs uppercase font-bold text-slate-400 mb-2">Unidad</label>
+                                        <select id="heroUnit" class="w-full bg-brand-950 border border-white/10 rounded-lg p-3 text-sm text-white focus:border-brand-emerald focus:outline-none">
+                                            <option value="Toneladas">Toneladas (Granel)</option>
+                                            <option value="Sacos (40kg)">Sacos (40 kg)</option>
+                                            <option value="Pacas/Fardos">Pacas / Fardos</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-400 mb-2">Ubicación de Destino</label>
+                                    <input type="text" id="heroLocation" placeholder="Municipio / Nombre de Rancho" class="w-full bg-brand-950 border border-white/10 rounded-lg p-3 text-sm text-white focus:border-brand-emerald focus:outline-none">
+                                </div>
+
+                                <button type="button" onclick="sendHeroQuote()" class="w-full bg-gradient-to-r from-brand-emerald to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-brand-950 font-extrabold p-4 rounded-lg text-sm uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2 mt-4">
+                                    <i class="ph-bold ph-paper-plane-tilt text-lg"></i>
+                                    Enviar a Despacho Comercial
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SELECTOR INTERACTIVO DE SECTORES PECUARIOS -->
+        <section id="sectores" class="py-24 bg-brand-900 border-b border-white/10 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-emerald font-bold text-xs uppercase tracking-widest block mb-2">Especialización Agroindustrial</span>
+                    <h2 class="font-syne font-extrabold text-3xl sm:text-5xl text-white">Soluciones por Sector Pecuario</h2>
+                    <p class="text-slate-400 mt-4 text-base">Diseñamos dietas y distribuimos forrajes balanceados para cada especie y etapa de desarrollo productivo.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    
+                    <!-- Bovino -->
+                    <button onclick="filterSector('bovino')" class="sector-btn glass-card p-6 rounded-xl text-center group cursor-pointer hover:bg-brand-800 transition-all border border-white/5 active" data-sector="bovino">
+                        <div class="w-16 h-16 rounded-full bg-brand-emerald/10 text-brand-emerald flex items-center justify-center mx-auto text-3xl mb-4 group-hover:scale-110 group-hover:bg-brand-emerald group-hover:text-brand-950 transition-all">
+                            <i class="ph-bold ph-cow"></i>
+                        </div>
+                        <h4 class="font-syne font-bold text-white text-base">Ganado Bovino</h4>
+                        <p class="text-xs text-slate-400 mt-2">Engorda & Leche</p>
+                    </button>
+
+                    <!-- Equino -->
+                    <button onclick="filterSector('equino')" class="sector-btn glass-card p-6 rounded-xl text-center group cursor-pointer hover:bg-brand-800 transition-all border border-white/5" data-sector="equino">
+                        <div class="w-16 h-16 rounded-full bg-brand-amber/10 text-brand-amber flex items-center justify-center mx-auto text-3xl mb-4 group-hover:scale-110 group-hover:bg-brand-amber group-hover:text-brand-950 transition-all">
+                            <i class="ph-bold ph-horse"></i>
+                        </div>
+                        <h4 class="font-syne font-bold text-white text-base">Sector Equino</h4>
+                        <p class="text-xs text-slate-400 mt-2">Alta Competencia</p>
+                    </button>
+
+                    <!-- Avícola -->
+                    <button onclick="filterSector('avicola')" class="sector-btn glass-card p-6 rounded-xl text-center group cursor-pointer hover:bg-brand-800 transition-all border border-white/5" data-sector="avicola">
+                        <div class="w-16 h-16 rounded-full bg-emerald-400/10 text-emerald-400 flex items-center justify-center mx-auto text-3xl mb-4 group-hover:scale-110 group-hover:bg-emerald-400 group-hover:text-brand-950 transition-all">
+                            <i class="ph-bold ph-bird"></i>
+                        </div>
+                        <h4 class="font-syne font-bold text-white text-base">Avícola</h4>
+                        <p class="text-xs text-slate-400 mt-2">Postura & Engorda</p>
+                    </button>
+
+                    <!-- Porcino -->
+                    <button onclick="filterSector('porcino')" class="sector-btn glass-card p-6 rounded-xl text-center group cursor-pointer hover:bg-brand-800 transition-all border border-white/5" data-sector="porcino">
+                        <div class="w-16 h-16 rounded-full bg-amber-500/10 text-amber-500 flex items-center justify-center mx-auto text-3xl mb-4 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-brand-950 transition-all">
+                            <i class="ph-bold ph-piggy-bank"></i>
+                        </div>
+                        <h4 class="font-syne font-bold text-white text-base">Porcino</h4>
+                        <p class="text-xs text-slate-400 mt-2">Iniciación & Final</p>
+                    </button>
+
+                    <!-- Fertilizantes -->
+                    <button onclick="filterSector('fertilizantes')" class="sector-btn glass-card p-6 rounded-xl text-center group cursor-pointer hover:bg-brand-800 transition-all border border-white/5" data-sector="fertilizantes">
+                        <div class="w-16 h-16 rounded-full bg-brand-emerald/10 text-brand-emerald flex items-center justify-center mx-auto text-3xl mb-4 group-hover:scale-110 group-hover:bg-brand-emerald group-hover:text-brand-950 transition-all">
+                            <i class="ph-bold ph-plant"></i>
+                        </div>
+                        <h4 class="font-syne font-bold text-white text-base">Fertilizantes</h4>
+                        <p class="text-xs text-slate-400 mt-2">NPK & Orgánicos</p>
+                    </button>
+
+                    <!-- Granos -->
+                    <button onclick="filterSector('granos')" class="sector-btn glass-card p-6 rounded-xl text-center group cursor-pointer hover:bg-brand-800 transition-all border border-white/5" data-sector="granos">
+                        <div class="w-16 h-16 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center mx-auto text-3xl mb-4 group-hover:scale-110 group-hover:bg-brand-gold group-hover:text-brand-950 transition-all">
+                            <i class="ph-bold ph-grains"></i>
+                        </div>
+                        <h4 class="font-syne font-bold text-white text-base">Granos a Granel</h4>
+                        <p class="text-xs text-slate-400 mt-2">Sorgos & Maíces</p>
+                    </button>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CATÁLOGO TÉCNICO INTERACTIVO -->
+        <section id="catalogo" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-brand-emerald font-bold text-xs uppercase tracking-widest block mb-2">Inspección de Producto</span>
+                    <h2 class="font-syne font-extrabold text-3xl sm:text-5xl text-white">Catálogo Técnico Profesional</h2>
+                </div>
+
+                <!-- Filtros de categoría -->
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="renderCatalog('all')" class="cat-filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-brand-emerald text-brand-950" data-cat="all">Todos</button>
+                    <button onclick="renderCatalog('concentrados')" class="cat-filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider glass-panel text-slate-300 hover:text-white" data-cat="concentrados">Concentrados</button>
+                    <button onclick="renderCatalog('forrajes')" class="cat-filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider glass-panel text-slate-300 hover:text-white" data-cat="forrajes">Forrajes & Fardos</button>
+                    <button onclick="renderCatalog('minerals')" class="cat-filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider glass-panel text-slate-300 hover:text-white" data-cat="minerals">Sales & Minerales</button>
+                </div>
+            </div>
+
+            <!-- Grid del Catálogo -->
+            <div id="catalogGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Se llena dinámicamente con JavaScript -->
+            </div>
+        </section>
+
+        <!-- CALCULADORA DE REQUERIMIENTO FORRAJERO B2B -->
+        <section id="calculadora" class="py-24 bg-gradient-to-b from-brand-900 to-brand-950 border-y border-white/10 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="text-brand-amber font-bold text-xs uppercase tracking-widest block">Herramienta de Diagnóstico B2B</span>
+                        <h2 class="font-syne font-extrabold text-3xl sm:text-5xl text-white leading-tight">
+                            Calculadora de Consumo Forrajero
+                        </h2>
+                        <p class="text-slate-300 text-base leading-relaxed">
+                            Planee el abastecimiento estacional de su rancho sin margen de error. Ingrese las variables de su hato para obtener la cubicación exacta en toneladas y recomendaciones de mezcla óptima.
+                        </p>
+
+                        <div class="space-y-4 pt-4">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-brand-emerald/10 text-brand-emerald flex items-center justify-center shrink-0 mt-1">
+                                    <i class="ph-bold ph-chart-bar text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Cálculo Basado en Materia Seca (MS)</h4>
+                                    <p class="text-xs text-slate-400">Algoritmo ajustado a tablas de requerimiento ganadero bovino y equino.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-brand-amber/10 text-brand-amber flex items-center justify-center shrink-0 mt-1">
+                                    <i class="ph-bold ph-truck text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Optimización de Fletes</h4>
+                                    <p class="text-xs text-slate-400">Determina el número de viajes en plataforma o camión tolva requeridos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel Interactivo de Cálculo -->
+                    <div class="lg:col-span-7">
+                        <div class="glass-panel p-8 sm:p-10 rounded-2xl border border-brand-emerald/30 shadow-2xl relative">
+                            
+                            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-300 mb-2">Especie / Sector</label>
+                                    <select id="calcSector" onchange="runCalculation()" class="w-full bg-brand-950 border border-white/20 rounded-lg p-3 text-sm text-white focus:border-brand-emerald focus:outline-none">
+                                        <option value="bovino_engorda">Bovino de Engorda (450 kg promedio)</option>
+                                        <option value="bovino_leche">Bovino Lechero (High Yield)</option>
+                                        <option value="equino">Equino de Trabajo / Registro</option>
+                                        <option value="ovino">Ovino / Caprino</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-300 mb-2">Número de Cabezas</label>
+                                    <input type="number" id="calcHeads" value="150" min="1" oninput="runCalculation()" class="w-full bg-brand-950 border border-white/20 rounded-lg p-3 text-sm text-white focus:border-brand-emerald focus:outline-none font-mono text-base font-bold text-brand-emerald">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-300 mb-2">Días de Suministro / Periodo</label>
+                                    <input type="number" id="calcDays" value="30" min="1" oninput="runCalculation()" class="w-full bg-brand-950 border border-white/20 rounded-lg p-3 text-sm text-white focus:border-brand-emerald focus:outline-none font-mono text-base font-bold text-brand-amber">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-300 mb-2">Ratio Concentrado / Forraje</label>
+                                    <select id="calcRatio" onchange="runCalculation()" class="w-full bg-brand-950 border border-white/20 rounded-lg p-3 text-sm text-white focus:border-brand-emerald focus:outline-none">
+                                        <option value="60_40">60% Concentrado / 40% Forraje Tosco</option>
+                                        <option value="70_30">70% Concentrado / 30% Forraje (Finalización)</option>
+                                        <option value="40_60">40% Concentrado / 60% Forraje (Mantenimiento)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Dashboard de Resultados -->
+                            <div class="bg-brand-950/80 rounded-xl p-6 border border-white/10 space-y-6">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs uppercase font-bold text-slate-400">Requerimiento Total Estimado</span>
+                                    <span class="text-xs text-brand-emerald font-bold">ESTIMACIÓN TÉCNICA</span>
+                                </div>
+
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
+                                    <div class="p-4 bg-brand-900/60 rounded-lg border border-white/5">
+                                        <div id="resConcentrate" class="font-syne font-extrabold text-2xl text-brand-emerald">0.0</div>
+                                        <div class="text-[10px] text-slate-400 uppercase font-bold mt-1">Ton. Concentrado</div>
+                                    </div>
+                                    <div class="p-4 bg-brand-900/60 rounded-lg border border-white/5">
+                                        <div id="resForage" class="font-syne font-extrabold text-2xl text-brand-amber">0.0</div>
+                                        <div class="text-[10px] text-slate-400 uppercase font-bold mt-1">Ton. Forraje / Pacas</div>
+                                    </div>
+                                    <div class="p-4 bg-brand-900/60 rounded-lg border border-white/5 col-span-2 md:col-span-1">
+                                        <div id="resTrucks" class="font-syne font-extrabold text-2xl text-white">0</div>
+                                        <div class="text-[10px] text-slate-400 uppercase font-bold mt-1">Fletes (Plataforma 30T)</div>
+                                    </div>
+                                </div>
+
+                                <button onclick="sendCalculatedQuote()" class="w-full bg-brand-emerald hover:bg-emerald-400 text-brand-950 font-extrabold p-4 rounded-lg uppercase tracking-wider text-xs shadow-lg transition-all flex items-center justify-center gap-2">
+                                    <i class="ph-bold ph-whatsapp-logo text-lg"></i>
+                                    Enviar Plan de Compras a WhatsApp
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- LOGÍSTICA PESADA & CADENA DE SUMINISTRO -->
+        <section id="logistica" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-emerald font-bold text-xs uppercase tracking-widest block mb-2">Capacidad Operativa</span>
+                <h2 class="font-syne font-extrabold text-3xl sm:text-5xl text-white">Logística Pesada de Entrega Directa</h2>
+                <p class="text-slate-400 mt-4 text-base">Infraestructura propia para movilizar cientos de toneladas diarias hacia ejidos, establos y unidades ganaderas privadas.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="glass-card p-8 rounded-2xl border border-white/5 relative overflow-hidden group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-emerald/10 text-brand-emerald flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="ph-bold ph-truck-trailer"></i>
+                    </div>
+                    <h3 class="font-syne font-bold text-xl text-white mb-3">Flotilla de Plataformas & Tolvas</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Unidades de 30 a 50 toneladas equipadas para descarga rápida a granel o estibado protegiendo la integridad del costal.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-white/10 pt-4">
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-brand-emerald"></i> Tolvas auto-descargables</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-brand-emerald"></i> Lonas de alta protección térmica</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border border-white/5 relative overflow-hidden group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-amber/10 text-brand-amber flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="ph-bold ph-navigation-arrow"></i>
+                    </div>
+                    <h3 class="font-syne font-bold text-xl text-white mb-3">Rutas a Zonas Difíciles</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Llegamos donde otros transportes no entran. Conductores experimentados en brechas y terracería de zonas serranas y desérticas.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-white/10 pt-4">
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-brand-amber"></i> Monitoreo satelital GPS</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-brand-amber"></i> Asignación de custodia opcional</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border border-white/5 relative overflow-hidden group">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-400/10 text-emerald-400 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="ph-bold ph-warehouse"></i>
+                    </div>
+                    <h3 class="font-syne font-bold text-xl text-white mb-3">Suministro Programado</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Contratos de abastecimiento mensual para asegurar inventario y congelar precios ante fluctuaciones del mercado de granos.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-white/10 pt-4">
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-emerald-400"></i> Garantía de precio por contrato</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-emerald-400"></i> Silos de reserva dedicada</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FORMULARIO INSTITUCIONAL B2B & COBERTURA -->
+        <section id="cobertura" class="py-24 bg-brand-900 border-t border-white/10 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12">
+                    
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="text-brand-emerald font-bold text-xs uppercase tracking-widest block">Atención Directa</span>
+                        <h2 class="font-syne font-extrabold text-3xl sm:text-5xl text-white">Atención a Grandes Cuentas & Gobierno</h2>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Contamos con capacidad jurídica, fiscal y operativa para licitaciones, programas de apoyo al campo y contratos corporativos de gran escala.
+                        </p>
+
+                        <div class="space-y-4 pt-4">
+                            <div class="p-4 glass-panel rounded-xl border border-white/10 flex items-center gap-4">
+                                <i class="ph-bold ph-map-pin text-3xl text-brand-emerald"></i>
+                                <div>
+                                    <div class="font-bold text-white text-sm">Planta Central & Bodegas</div>
+                                    <div class="text-xs text-slate-400">Carretera Federal Km 42, Región Carbonífera / Noreste</div>
+                                </div>
+                            </div>
+
+                            <div class="p-4 glass-panel rounded-xl border border-white/10 flex items-center gap-4">
+                                <i class="ph-bold ph-envelope-simple text-3xl text-brand-amber"></i>
+                                <div>
+                                    <div class="font-bold text-white text-sm">Mesa B2B / Licitaciones</div>
+                                    <div class="text-xs text-slate-400">ventas@elalamoforrajera.com</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulario Corporativo B2B -->
+                    <div class="lg:col-span-7">
+                        <div class="glass-panel p-8 sm:p-10 rounded-2xl border border-white/10">
+                            <h3 class="font-syne font-bold text-2xl text-white mb-6">Solicitud de Cotización Institucional</h3>
+                            
+                            <form id="b2bForm" onsubmit="handleB2BSubmit(event)" class="space-y-4">
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs uppercase font-bold text-slate-400 mb-2">Nombre Completo / Representante</label>
+                                        <input type="text" required placeholder="Ing. Roberto Garza" class="w-full bg-brand-950 border border-white/10 rounded-lg p-3 text-sm text-white focus:border-brand-emerald focus:outline-none">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs uppercase font-bold text-slate-400 mb-2">Rancho / Empresa / Sociedad</label>
+                                        <input type="text" required placeholder="Ganadera San José S.P.R. de R.L." class="w-full bg-brand-950 border border-white/10 rounded-lg p-3 text-sm text-white focus:border-brand-emerald focus:outline-none">
+                                    </div>
+                                </div>
+
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs uppercase font-bold text-slate-400 mb-2">Teléfono de Contacto</label>
+                                        <input type="tel" required placeholder="861 000 0000" class="w-full bg-brand-950 border border-white/10 rounded-lg p-3 text-sm text-white focus:border-brand-emerald focus:outline-none">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs uppercase font-bold text-slate-400 mb-2">RFC / Cédula Fiscal (Opcional)</label>
+                                        <input type="text" placeholder="GAA000000XXX" class="w-full bg-brand-950 border border-white/10 rounded-lg p-3 text-sm text-white focus:border-brand-emerald focus:outline-none">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-400 mb-2">Detalle de Insumos Requeridos & Plazos</label>
+                                    <textarea rows="4" required placeholder="Especifique productos, tonelaje deseado y fechas aproximadas de entrega..." class="w-full bg-brand-950 border border-white/10 rounded-lg p-3 text-sm text-white focus:border-brand-emerald focus:outline-none"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full bg-brand-amber hover:bg-amber-600 text-brand-950 font-extrabold p-4 rounded-lg text-sm uppercase tracking-wider shadow-xl transition-all flex items-center justify-center gap-2">
+                                    <i class="ph-bold ph-paper-plane text-lg"></i>
+                                    Enviar a Dirección Comercial
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Ficha Técnica -->
+    <div id="techModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="glass-panel w-full max-w-2xl rounded-2xl border border-brand-emerald/40 p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl">
+                <i class="ph-bold ph-x"></i>
+            </button>
+
+            <div id="modalContent">
+                <!-- Se inyecta por JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER CORPORATIVO COMPLETO -->
+    <footer class="bg-brand-950 border-t border-white/10 pt-16 pb-12 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+                
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-brand-emerald rounded flex items-center justify-center text-brand-950 font-syne font-extrabold text-xl">
+                            Á
+                        </div>
+                        <span class="font-syne font-extrabold text-lg text-white tracking-wider">EL ÁLAMO</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+                        Líderes en nutrición ganadera, granos procesados y logística forrajera para el norte de México. Calidad garantizada de fábrica a comedero.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 text-brand-emerald text-lg">
+                        <a href="#" class="hover:text-white transition-colors"><i class="ph-bold ph-facebook-logo"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="ph-bold ph-instagram-logo"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="ph-bold ph-whatsapp-logo"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-syne font-bold text-white text-xs uppercase tracking-widest mb-4">Líneas de Producto</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#catalogo" onclick="renderCatalog('concentrados')" class="hover:text-brand-emerald">Concentrados Proteicos</a></li>
+                        <li><a href="#catalogo" onclick="renderCatalog('forrajes')" class="hover:text-brand-emerald">Fardos & Forraje Verde</a></li>
+                        <li><a href="#catalogo" onclick="renderCatalog('minerals')" class="hover:text-brand-emerald">Sales & Nucleos Minerales</a></li>
+                        <li><a href="#catalogo" class="hover:text-brand-emerald">Maíz & Sorgo Rolado</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-syne font-bold text-white text-xs uppercase tracking-widest mb-4">Herramientas</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#calculadora" class="hover:text-brand-emerald">Calculadora de Consumo</a></li>
+                        <li><a href="#logistica" class="hover:text-brand-emerald">Cubicación de Fletes</a></li>
+                        <li><a href="#cobertura" class="hover:text-brand-emerald">Atención a Distribuidores</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-syne font-bold text-white text-xs uppercase tracking-widest mb-4">Certificación</h4>
+                    <div class="p-3 bg-brand-900 border border-white/10 rounded-lg text-center">
+                        <i class="ph-bold ph-certificate text-brand-amber text-2xl mb-1"></i>
+                        <div class="text-[10px] text-white font-bold">NORMA OFICIAL PECUARIA</div>
+                        <div class="text-[9px] text-slate-400 mt-1">Análisis Nutricional de Laboratorio Garantizado</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Legales & Marca de Agua -->
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs gap-4 text-slate-500">
+                <div>
+                    © 2026 EL ÁLAMO - DISTRIBUIDORA AGROINDUSTRIAL. Todos los derechos reservados.
+                </div>
+                <div class="flex items-center gap-2">
+                    <span>Desarrollo de Arquitectura Digital por</span>
+                    <span class="font-syne font-bold text-slate-300 tracking-widest uppercase border-b border-brand-amber">BLACK GOLD DIGITAL</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LÓGICA INTERACTIVA JS -->
+    <script>
+        // Base de datos de productos
+        const products = [
+            {
+                id: 1,
+                name: "Concentrado Engorda Bovino High-Gain 18%",
+                category: "concentrados",
+                sector: "bovino",
+                badge: "ALTA CONVERSIÓN",
+                protein: "18.0%",
+                fiber: "8.5%",
+                fat: "4.0%",
+                moisture: "12.0%",
+                presentation: "Saco 40 kg / Granel",
+                image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=800&q=80",
+                description: "Formulado para acelerar la ganancia diaria de peso en bovinos de corral de engorda. Alta digestibilidad de almidones con amortiguadores ruminales."
+            },
+            {
+                id: 2,
+                name: "Fardo de Alfalfa Chicoteada Premium",
+                category: "forrajes",
+                sector: "equino",
+                badge: "FIBRA SELECTA",
+                protein: "21.5%",
+                fiber: "24.0%",
+                fat: "2.2%",
+                moisture: "10.0%",
+                presentation: "Paca 35 kg aprox. / Lotes",
+                image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=800&q=80",
+                description: "Corte tierno de alfalfa de riego, libre de malezas y polvo. Ideal para equinos de alta competencia y establos lecheros de alto rendimiento."
+            },
+            {
+                id: 3,
+                name: "Sales Minerales Reproductivas con Fósforo 12%",
+                category: "minerals",
+                sector: "bovino",
+                badge: "SALUD PECUARIA",
+                protein: "N/A",
+                fiber: "N/A",
+                fat: "N/A",
+                moisture: "4.0%",
+                presentation: "Saco 25 kg",
+                image: "https://images.unsplash.com/photo-1628157582853-a796fa650a6a?auto=format&fit=crop&w=800&q=80",
+                description: "Suplemento mineral micro-pelletizado para corregir deficiencias en agostadero. Eleva porcentajes de parición y fortalece la estructura ósea."
+            },
+            {
+                id: 4,
+                name: "Maíz Amarillo Rolado al Vapor",
+                category: "concentrados",
+                sector: "granos",
+                badge: "ALTA ENERGÍA",
+                protein: "9.0%",
+                fiber: "2.5%",
+                fat: "3.8%",
+                moisture: "11.5%",
+                presentation: "Granel / Saco 40 kg",
+                image: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=800&q=80",
+                description: "Proceso térmico de hojuelado que gelatiniza los almidones para lograr la máxima eficiencia energética en rumiantes."
+            },
+            {
+                id: 5,
+                name: "Alimento Iniciador Porcino Pro-Grow",
+                category: "concentrados",
+                sector: "porcino",
+                badge: "CRECIMIENTO RÁPIDO",
+                protein: "22.0%",
+                fiber: "3.5%",
+                fat: "5.0%",
+                moisture: "10.0%",
+                presentation: "Saco 40 kg",
+                image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=800&q=80",
+                description: "Enriquecido con lactosuero y acidificantes para un desarrollo digestivo óptimo post-destete."
+            },
+            {
+                id: 6,
+                name: "Mezcla Avícola Postura Dorada",
+                category: "concentrados",
+                sector: "avicola",
+                badge: "MAX CÁSCARA",
+                protein: "17.0%",
+                fiber: "4.0%",
+                fat: "3.5%",
+                moisture: "11.0%",
+                presentation: "Saco 40 kg",
+                image: "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=800&q=80",
+                description: "Adicionado con calcio micronizado y pigmentantes naturales para cáscaras resistentes y yemas de color intenso."
+            }
+        ];
+
+        // Renderizar Catálogo
+        function renderCatalog(filterCategory = 'all', filterSector = null) {
+            const grid = document.getElementById('catalogGrid');
+            grid.innerHTML = '';
+
+            const filtered = products.filter(p => {
+                const matchesCat = filterCategory === 'all' || p.category === filterCategory;
+                const matchesSector = !filterSector || p.sector === filterSector;
+                return matchesCat && matchesSector;
+            });
+
+            if(filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 glass-panel rounded-2xl">
+                        <i class="ph-bold ph-package text-4xl text-brand-amber mb-2"></i>
+                        <p class="text-slate-300 font-bold">No se encontraron productos en esta categoría.</p>
+                        <button onclick="renderCatalog('all')" class="mt-4 text-xs text-brand-emerald underline">Ver todos los productos</button>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(prod => {
+                const card = document.createElement('div');
+                card.className = 'glass-card rounded-2xl overflow-hidden flex flex-col group';
+                card.innerHTML = `
+                    <div class="relative h-56 overflow-hidden bg-brand-950">
+                        <span class="absolute top-4 left-4 z-10 bg-brand-950/90 backdrop-blur border border-brand-amber/40 text-brand-amber text-[10px] font-extrabold px-3 py-1 rounded uppercase tracking-wider">
+                            ${prod.badge}
+                        </span>
+                        <img src="${prod.image}" alt="${prod.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-syne font-bold text-xl text-white mb-2">${prod.name}</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed line-clamp-2">${prod.description}</p>
+                        </div>
+
+                        <!-- Ficha Rápida -->
+                        <div class="grid grid-cols-2 gap-2 p-3 bg-brand-950/60 rounded-lg text-xs border border-white/5">
+                            <div>
+                                <span class="text-slate-500 block text-[10px] uppercase font-bold">Proteína Bruta</span>
+                                <span class="text-brand-emerald font-bold font-mono">${prod.protein}</span>
+                            </div>
+                            <div>
+                                <span class="text-slate-500 block text-[10px] uppercase font-bold">Presentación</span>
+                                <span class="text-white font-semibold">${prod.presentation}</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 flex items-center gap-2">
+                            <button onclick="openTechSheet(${prod.id})" class="flex-1 glass-panel hover:bg-white/10 text-white text-xs font-bold py-3 rounded-lg uppercase tracking-wider transition-all flex items-center justify-center gap-1">
+                                <i class="ph-bold ph-file-text"></i> Ficha Técnica
+                            </button>
+                            <a href="https://api.whatsapp.com/send?phone=528611265737&text=Hola,%20deseo%20cotizar%20el%20producto:%20${encodeURIComponent(prod.name)}" target="_blank" 
+                               class="bg-brand-emerald hover:bg-emerald-400 text-brand-950 text-xs font-extrabold px-4 py-3 rounded-lg uppercase transition-all flex items-center justify-center">
+                                <i class="ph-bold ph-whatsapp-logo text-base"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+            // Actualizar botones activos
+            document.querySelectorAll('.cat-filter-btn').forEach(btn => {
+                if(btn.dataset.cat === filterCategory) {
+                    btn.className = "cat-filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-brand-emerald text-brand-950";
+                } else {
+                    btn.className = "cat-filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider glass-panel text-slate-300 hover:text-white";
+                }
+            });
+        }
+
+        // Abrir Modal de Ficha Técnica
+        function openTechSheet(id) {
+            const prod = products.find(p => p.id === id);
+            if(!prod) return;
+
+            const content = document.getElementById('modalContent');
+            content.innerHTML = `
+                <div class="space-y-6">
+                    <div class="flex items-start justify-between border-b border-white/10 pb-4">
+                        <div>
+                            <span class="text-brand-amber font-bold text-xs uppercase tracking-widest">${prod.badge}</span>
+                            <h3 class="font-syne font-extrabold text-2xl text-white mt-1">${prod.name}</h3>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-300 text-sm leading-relaxed">${prod.description}</p>
+
+                    <div class="space-y-3">
+                        <h4 class="font-syne font-bold text-sm text-white uppercase tracking-wider text-brand-emerald">Análisis Garantizado de Laboratorio</h4>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+                            <div class="p-3 bg-brand-950 rounded-lg border border-white/10">
+                                <span class="text-[10px] text-slate-400 block font-bold uppercase">Proteína</span>
+                                <span class="font-mono text-lg font-bold text-brand-emerald">${prod.protein}</span>
+                            </div>
+                            <div class="p-3 bg-brand-950 rounded-lg border border-white/10">
+                                <span class="text-[10px] text-slate-400 block font-bold uppercase">Fibra Ef.</span>
+                                <span class="font-mono text-lg font-bold text-brand-amber">${prod.fiber}</span>
+                            </div>
+                            <div class="p-3 bg-brand-950 rounded-lg border border-white/10">
+                                <span class="text-[10px] text-slate-400 block font-bold uppercase">Grasa</span>
+                                <span class="font-mono text-lg font-bold text-white">${prod.fat}</span>
+                            </div>
+                            <div class="p-3 bg-brand-950 rounded-lg border border-white/10">
+                                <span class="text-[10px] text-slate-400 block font-bold uppercase">Humedad Máx.</span>
+                                <span class="font-mono text-lg font-bold text-slate-300">${prod.moisture}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-3">
+                        <a href="https://api.whatsapp.com/send?phone=528611265737&text=Solicito%20cotizacion%20de%20lote%20para:%20${encodeURIComponent(prod.name)}" target="_blank"
+                           class="flex-1 bg-brand-emerald text-brand-950 font-extrabold p-3.5 rounded-lg text-xs uppercase tracking-wider text-center shadow-lg transition-all flex items-center justify-center gap-2">
+                            <i class="ph-bold ph-whatsapp-logo text-lg"></i> Solicitar Flete & Cotización por Lote
+                        </a>
+                    </div>
+                </div>
+            `;
+
+            const modal = document.getElementById('techModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('techModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Filtrar por sector desde botones de sector
+        function filterSector(sector) {
+            renderCatalog('all', sector);
+
+            document.querySelectorAll('.sector-btn').forEach(btn => {
+                if(btn.dataset.sector === sector) {
+                    btn.classList.add('border-brand-emerald', 'bg-brand-800');
+                } else {
+                    btn.classList.remove('border-brand-emerald', 'bg-brand-800');
+                }
+            });
+
+            // Scroll suave hacia el catálogo
+            document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Lógica de Calculadora Forrajera
+        function runCalculation() {
+            const heads = parseFloat(document.getElementById('calcHeads').value) || 0;
+            const days = parseFloat(document.getElementById('calcDays').value) || 0;
+            const sector = document.getElementById('calcSector').value;
+            const ratio = document.getElementById('calcRatio').value;
+
+            // Factores de consumo diario en kg de Materia Seca por cabeza
+            let dailyKgPerHead = 12; // Bovino engorda por defecto
+
+            if(sector === 'bovino_leche') dailyKgPerHead = 18;
+            if(sector === 'equino') dailyKgPerHead = 9;
+            if(sector === 'ovino') dailyKgPerHead = 2.2;
+
+            const totalKgDaily = heads * dailyKgPerHead;
+            const totalKgPeriod = totalKgDaily * days;
+
+            let concentrateRatio = 0.6;
+            if(ratio === '70_30') concentrateRatio = 0.7;
+            if(ratio === '40_60') concentrateRatio = 0.4;
+
+            const concentrateTon = (totalKgPeriod * concentrateRatio) / 1000;
+            const forageTon = (totalKgPeriod * (1 - concentrateRatio)) / 1000;
+            const totalTon = concentrateTon + forageTon;
+
+            const trucksNeeded = Math.ceil(totalTon / 30); // Asumiendo fletes de 30T
+
+            document.getElementById('resConcentrate').innerText = concentrateTon.toFixed(1);
+            document.getElementById('resForage').innerText = forageTon.toFixed(1);
+            document.getElementById('resTrucks').innerText = trucksNeeded;
+        }
+
+        function sendCalculatedQuote() {
+            const heads = document.getElementById('calcHeads').value;
+            const days = document.getElementById('calcDays').value;
+            const conc = document.getElementById('resConcentrate').innerText;
+            const forage = document.getElementById('resForage').innerText;
+
+            const msg = `Hola EL ÁLAMO, realicé un cálculo en su plataforma para un hato de ${heads} cabezas durante ${days} días. Requiero aproximadamente ${conc} Toneladas de Concentrado y ${forage} Toneladas de Forraje. Deseo recibir cotización.`;
+            window.open(`https://api.whatsapp.com/send?phone=528611265737&text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        function sendHeroQuote() {
+            const prod = document.getElementById('heroProduct').value;
+            const vol = document.getElementById('heroVolume').value;
+            const unit = document.getElementById('heroUnit').value;
+            const loc = document.getElementById('heroLocation').value;
+
+            const msg = `Cotización Rápida EL ÁLAMO:\nProducto: ${prod}\nVolumen: ${vol} ${unit}\nDestino: ${loc}`;
+            window.open(`https://api.whatsapp.com/send?phone=528611265737&text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        function handleB2BSubmit(e) {
+            e.preventDefault();
+            alert('Su solicitud corporativa ha sido registrada. Un gestor comercial de EL ÁLAMO se pondrá en contacto a la brevedad.');
+            e.target.reset();
+        }
+
+        // Inicialización en carga de ventana
+        window.onload = function() {
+            renderCatalog('all');
+            runCalculation();
+        };
+    </script>
+</body>
+</html>
